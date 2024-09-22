@@ -6,6 +6,7 @@ const ctx = canvas.getContext("2d");
 
 
 
-new Cubo(200,200,2).dibujar_ortografica(ctx)
-new Cubo(300,200,2).dibujar_ortografica(ctx)
+new Cubo(200,200,2).dibujar_perspectiva(ctx,50)
+new Cubo(800,200,2).dibujar_ortografica(ctx)
+
 

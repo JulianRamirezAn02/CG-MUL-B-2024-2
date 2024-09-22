@@ -20,7 +20,6 @@ export class Cuadrado {
         const D = [x-longitud/2,y+longitud/2]
         return [A,B,C,D]
     }
-    
     dibujarCuadrado(ctx){
         const [A,B,C,D] = this.verticesCuadrado(this.#x,this.#y,this.#longitud);
         new Linea(A,B,this.#line).dibujar(ctx)
