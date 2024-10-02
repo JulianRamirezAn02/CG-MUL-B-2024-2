@@ -34,8 +34,7 @@ scene.add(cone);
 
 camera.position.z = 50;
 
-
-function animate(figura) {
+function animate() {
     requestAnimationFrame(animate);
 
     cube.rotation.x += Math.random() * 0.02; 
@@ -52,4 +51,4 @@ function animate(figura) {
 
     renderer.render(scene, camera);
 }
-animate(cube)
+animate();
