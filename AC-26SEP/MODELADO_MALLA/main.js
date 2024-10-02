@@ -24,12 +24,18 @@ const edgesSphere = new THREE.EdgesGeometry(geometrySphere);
 const lineSphere = new THREE.LineSegments(edgesSphere, new THREE.LineBasicMaterial({ color: 0x000000 })); 
 sphere.add(lineSphere);
 
-
+const geometryCone = new THREE.ConeGeometry(5, 20, 32);
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzl4jjC8ol5Ss5Wq2AHCFb7tbDjWmLW7GhPQ&s'); //material madera 
+const materialCone = new THREE.MeshBasicMaterial({ map: texture }); 
+const cone = new THREE.Mesh(geometryCone, materialCone);
+cone.position.x = 20; 
+scene.add(cone);
 
 camera.position.z = 50;
 
 
-function animate() {
+function animate(figura) {
     requestAnimationFrame(animate);
 
     cube.rotation.x += Math.random() * 0.02; 
@@ -40,6 +46,10 @@ function animate() {
     sphere.rotation.y += Math.random() * 0.02; 
     sphere.position.y += (Math.random() - 0.5) * 0.5; 
 
+    cone.rotation.x += Math.random() * 0.02; 
+    cone.rotation.y += Math.random() * 0.02; 
+    cone.position.z += (Math.random() - 0.5) * 0.5; 
+
     renderer.render(scene, camera);
 }
-animate();
+animate(cube)
