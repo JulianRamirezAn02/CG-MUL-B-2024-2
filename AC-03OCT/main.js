@@ -16,11 +16,11 @@ function getRandomInt(min, max) {
 // Crear cubos aleatorios
 const numCubes = getRandomInt(1, 5); // Número de cubos entre 1 y 5
 const cubes = [];
-const spacing = 5; // Distancia entre los cubos
+const spacing = 3; // Distancia entre los cubos
 
 for (let i = 0; i < numCubes; i++) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true});
     const cube = new THREE.Mesh(geometry, material);
 
     // Posicionar cubos de forma equidistante
